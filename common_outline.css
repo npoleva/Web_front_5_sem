@@ -1,0 +1,52 @@
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf3e0;
+    color: #3e2723;
+  }
+  
+  header {
+    background-color: #8b4513;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .main_navigation {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: #3e2723;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  footer {
+    background-color: #3e2723;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a.active {
+    font-weight: bold; 
+    color: #a68580; 
+    text-decoration: underline; 
+  }
+  

@@ -168,6 +168,12 @@ tr:nth-child(odd) {
   }
 }
 
+nav a.active {
+  font-weight: bold; 
+  color: #ece6e5; 
+  text-decoration: underline; 
+}
+
 
 
 
