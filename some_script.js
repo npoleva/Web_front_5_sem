@@ -1,13 +1,3 @@
-function setColor(e) {
-    if (e.type === "mouseover") {
-        e.target.style.backgroundColor = "#ff6347"; 
-        e.target.style.color = "white"; 
-    } else if (e.type === "mouseout") {
-        e.target.style.backgroundColor = ""; 
-        e.target.style.color = ""; 
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
 
     let menuItems = document.querySelectorAll(".main_navigation a");
@@ -19,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
             item.classList.add("active"); 
         }
     
-        item.addEventListener("mouseover", setColor);
-        item.addEventListener("mouseout", setColor);
     }
 
     (function () {
