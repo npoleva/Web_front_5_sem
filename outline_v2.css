@@ -118,17 +118,9 @@ footer {
   flex-wrap: wrap;
 }
 .recipe-table {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+ 
   gap: 10px;
   margin: 20px 0;
-}
-
-table {
-  display: grid;
-  width: 100%;
-  border-collapse: collapse;
-  grid-column: 1 / -1;
 }
 
 tbody {
@@ -142,6 +134,16 @@ tr {
   display: contents
 }
 
+table {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  width: 100%;
+  border-collapse: collapse;
+  grid-column: 1 / -1;
+}
+
+
+
 th, td {
   padding: 10px;
   text-align: left;
@@ -153,11 +155,13 @@ th {
   color: white;
 }
 
-tr:nth-child(even) {
+
+
+tbody tr:nth-child(even) td{
   background-color: #f2f2f2;
 }
 
-tr:nth-child(odd) {
+tbody tr:nth-child(odd) td{
   background-color: #ffffff;
 }
 
