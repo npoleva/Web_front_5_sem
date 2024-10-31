@@ -125,10 +125,20 @@ footer {
 }
 
 table {
+  display: grid;
   width: 100%;
   border-collapse: collapse;
   grid-column: 1 / -1;
 }
+
+tbody {
+  display: contents
+}
+
+thead {
+  display: contents
+}
+
 
 th, td {
   padding: 10px;
@@ -141,6 +151,10 @@ th {
   color: white;
 }
 
+tr {
+  display: contents
+}
+
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -150,7 +164,7 @@ tr:nth-child(odd) {
 }
 
 .images_for_small_screen {
-
+  display: none;
 }
 .navigation_2_for_small_screen{
   display: flex;
@@ -159,13 +173,19 @@ tr:nth-child(odd) {
 }
 
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 2500px) {
 .images {
   display: none;
 }
   .navigation_2{
     display: none;
   }
+}
+
+nav a.active {
+  font-weight: bold; 
+  color: #ece6e5; 
+  text-decoration: underline; 
 }
 
 
