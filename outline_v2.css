@@ -125,9 +125,21 @@ footer {
 }
 
 table {
+  display: grid;
   width: 100%;
   border-collapse: collapse;
   grid-column: 1 / -1;
+}
+
+tbody {
+  display: contents
+}
+
+thead {
+  display: contents
+}
+tr {
+  display: contents
 }
 
 th, td {
@@ -178,6 +190,7 @@ nav a:hover {
   color: #ff6347;
   text-decoration: underline;
 }
+
 
 
 
