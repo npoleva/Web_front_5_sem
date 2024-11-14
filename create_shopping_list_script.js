@@ -26,15 +26,18 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
     localStorage.setItem("shoppingList", JSON.stringify(Array.from(shoppingList)));
   
     displayShoppingList(Array.from(shoppingList));
+    toggleClearButton(Array.from(shoppingList));
   });
   
   function displayShoppingList(ingredients) {
     const container = document.getElementById("generatedList");
     container.innerHTML = '';
   
-    const listTitle = document.createElement("h3");
-    listTitle.innerText = "Список покупок:";
-    container.appendChild(listTitle);
+    if (ingredients.length > 0){
+      const listTitle = document.createElement("h3");
+      listTitle.innerText = "Список покупок:";
+      container.appendChild(listTitle);
+    }    
   
     const list = document.createElement("ul");
   
@@ -64,6 +67,30 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
   
     container.appendChild(list);
   }
+  function toggleClearButton(ingredients) {
+    const container = document.getElementById("generatedList");
+    
+    if (ingredients && ingredients.length > 0) {
+        
+        if (!document.getElementById("clearShoppingListButton")) {
+            const clearButton = document.createElement("button");
+            clearButton.id = "clearShoppingListButton";
+            clearButton.innerText = "Очистить список покупок";
+            clearButton.addEventListener("click", function() {
+                localStorage.removeItem("shoppingList");
+                localStorage.removeItem("shoppingState");
+                displayShoppingList([]); 
+                toggleClearButton([]);
+            });
+            container.appendChild(clearButton);  
+        }
+    } else {
+        const clearButton = document.getElementById("clearShoppingListButton");
+        if (clearButton) {
+            clearButton.remove();  
+        }
+    }
+}
   
   window.addEventListener("load", function() {
     
@@ -80,6 +107,7 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
     }
 
     if (savedShoppingList && savedShoppingList.length > 0) {
-        displayShoppingList(savedShoppingList);
-      }
+      displayShoppingList(savedShoppingList);
+      toggleClearButton(savedShoppingList);
+    }
   });
