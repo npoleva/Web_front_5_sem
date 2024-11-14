@@ -43,10 +43,13 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
   
     const savedShoppingState = JSON.parse(localStorage.getItem("shoppingState")) || {};
   
-    ingredients.forEach(ingredient => {
+    ingredients.forEach((ingredient, index) => {
       const listItem = document.createElement("li");
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
+
+      const uniqueIndex = `ingredient-${index}`;
+      checkbox.id = uniqueIndex;
   
       if (savedShoppingState[ingredient]) {
         checkbox.checked = true;
@@ -59,10 +62,14 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
         savedShoppingState[ingredient] = this.checked;
         localStorage.setItem("shoppingState", JSON.stringify(savedShoppingState));
       });
+
+      const label = document.createElement("label");
+      label.setAttribute("for", uniqueIndex);
+      label.textContent = " " + ingredient;
   
-      listItem.appendChild(checkbox);
-      listItem.appendChild(document.createTextNode(" " + ingredient));
+      listItem.appendChild(checkbox);      
       list.appendChild(listItem);
+      listItem.appendChild(label);
     });
   
     container.appendChild(list);
