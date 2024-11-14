@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Создать список покупок</title>
+  <script src="create_shopping_list_script.js" defer></script> 
+  <link rel="stylesheet" href="common_outline.css"> 
+</head>
+<body>
+  <header>
+    <h1>Кулинарный мастер</h1>
+    <nav class="main_navigation" id="main_page">
+      <a href="Culinary_master.html">Главная</a>
+      <a href="my_recipes.html">Мои рецепты</a>
+      <a href="create_recipe.html">Создать рецепт</a>
+      <a href="shopping_list.html">Список покупок</a>
+      <a href="create_shopping_list.html">Создать список покупок</a> 
+    </nav>
+  </header>
+
+  <h2>Создать список покупок</h2>
+
+  <form id="shopping_list_Form">
+    <fieldset>
+      <legend>Выберите блюда:</legend>
+      <label><input type="checkbox" name="dishes" value="Салат Оливье"> Салат Оливье</label><br>
+      <label><input type="checkbox" name="dishes" value="Борщ"> Борщ</label><br>
+      <label><input type="checkbox" name="dishes" value="Паста Карбонара"> Паста Карбонара</label><br>
+      <label><input type="checkbox" name="dishes" value="Куриное филе с овощами"> Куриное филе с овощами</label><br>
+    </fieldset>
+
+    <button type="submit">Создать список покупок</button>
+  </form>
+
+  <div id="generatedList"></div>
+</body>
+</html>
