@@ -123,6 +123,17 @@ footer {
   margin: 20px 0;
 }
 
+tbody {
+  display: contents
+}
+
+thead {
+  display: contents
+}
+tr {
+  display: contents
+}
+
 table {
   display: grid;
   grid-template-columns: repeat(6, 1fr); 
@@ -131,6 +142,8 @@ table {
   grid-column: 1 / -1;
 }
 
+
+
 tbody {
   display: contents
 }
@@ -138,6 +151,7 @@ tbody {
 thead {
   display: contents
 }
+
 
 
 th, td {
@@ -159,7 +173,7 @@ tbody tr:nth-child(even) td{
   background-color: #f2f2f2;
 }
 
-tbode tr:nth-child(odd) td{
+tbody tr:nth-child(odd) td{
   background-color: #ffffff;
 }
 
@@ -186,6 +200,11 @@ nav a.active {
   font-weight: bold; 
   color: #ece6e5; 
   text-decoration: underline; 
+}
+
+nav a:hover {
+  color: #ff6347;
+  text-decoration: underline;
 }
 
 
