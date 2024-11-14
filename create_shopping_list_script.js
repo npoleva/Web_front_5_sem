@@ -3,7 +3,6 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
   
     
     const selectedDishes = Array.from(document.querySelectorAll('input[name="dishes"]:checked')).map(input => input.value);
-    // console.log(selectedDishes);
 
     localStorage.setItem("selectedDishes", JSON.stringify(selectedDishes));
   
