@@ -6,6 +6,7 @@
   <meta name="description" content="Кулинарный мастер - Подберите рецепты по ингредиентам и создайте собственные кулинарные шедевры.">
   <link rel="stylesheet" href="outline_v2.css">
   <script src="some_script.js"></script>
+  <script src="fetch_recipes.js" defer></script>
   <title>Кулинарный мастер</title>
 </head>
 <body>
@@ -67,9 +68,9 @@
 </section>
 
 <h2>Лучшие рецепты месяца</h2>
-  <section class="recipe-table">
+  <section class="recipe-data">
     <div class="table-container">
-      <table>
+      <table id="recipe-table">
         <thead>
         <tr>
           <th>Название рецепта</th>
@@ -81,50 +82,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Салат Цезарь</td>
-          <td>4</td>
-          <td>20 мин</td>
-          <td>350 ккал</td>
-          <td>Итальянская</td>
-          <td>4.8</td>
-        </tr>
-        <tr>
-          <td>Паста Карбонара</td>
-          <td>4</td>
-          <td>15 мин</td>
-          <td>600 ккал</td>
-          <td>Итальянская</td>
-          <td>4.7</td>
-        </tr>
-        <tr>
-          <td>Омлет с овощами</td>
-          <td>3</td>
-          <td>10 мин</td>
-          <td>250 ккал</td>
-          <td>Французская</td>
-          <td>4.5</td>
-        </tr>
-        <tr>
-          <td>Том Ям</td>
-          <td>6</td>
-          <td>30 мин</td>
-          <td>200 ккал</td>
-          <td>Тайская</td>
-          <td>4.9</td>
-        </tr>
-        <tr>
-          <td>Пирог с яблоками</td>
-          <td>5</td>
-          <td>45 мин</td>
-          <td>300 ккал</td>
-          <td>Русская</td>
-          <td>4.6</td>
-        </tr>
         </tbody>
       </table>
+      <div class="preloader">
+        <img src="loading.gif" alt="Загрузка данных..."></td>
+      </div>
+      <div class="error-message"></div>
     </div>
   </section>
+  <template id="recipe-row-template">
+    <tr>
+      <td class="recipe-name"></td>
+      <td class="ingredients-count"></td>
+      <td class="cook-time"></td>
+      <td class="calories"></td>
+      <td class="cuisine"></td>
+      <td class="rating"></td>
+    </tr>
+  </template>
 </main>
 
 <footer>
