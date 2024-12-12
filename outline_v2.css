@@ -233,6 +233,11 @@ nav a:hover {
   font-weight: bold;
   text-align: center;
 }
+#topbar {
+  background-color: #F7B32B;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3); 
+  height: 4px;
+}
 
 
 
