@@ -91,6 +91,11 @@ document.getElementById("shopping_list_Form").addEventListener("submit", functio
 
     displayShoppingList(Array.from(shoppingList));
     toggleClearButton(Array.from(shoppingList));
+
+    toastr.success("Список покупок успешно создан!", "Успех", {
+        "positionClass": "toast-top-right", 
+        "timeOut": 3000
+    });
 });
 
 function displayShoppingList(ingredients) {
@@ -158,6 +163,7 @@ function toggleClearButton(ingredients) {
                 setItem("shoppingState", {});
                 displayShoppingList([]); 
                 toggleClearButton([]);
+                toastr.warning("Список покупок очищен.", "Очистка");
             });
             container.appendChild(clearButton);  
         }
