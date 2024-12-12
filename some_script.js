@@ -19,5 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(function() {
         topbar.hide();
+        console.log("HIDE")
     }, 3000); 
 });
